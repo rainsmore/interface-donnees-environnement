@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualisation Environnement</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="d-flex">
+    <nav class="bg-dark text-white p-3 vh-100" style="width: 250px;">
+      <h4 class="text-white">Données</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link text-white" href="#">Précipitations</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Température</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Débit</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container-fluid p-4">
+      <h2 class="mb-4">Visualisation des données environnementales</h2>
+
+      <!-- Filtres -->
+      <div class="row my-3">
+        <div class="col-md-4">
+          <label for="date">Date :</label>
+          <input type="date" id="date" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label for="region">Région :</label>
+          <select id="region" class="form-select">
+            <option>Nord</option>
+            <option>Sud</option>
+            <option>Est</option>
+            <option>Ouest</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="variable">Variable :</label>
+          <select id="variable" class="form-select">
+            <option>Précipitations</option>
+            <option>Température</option>
+            <option>Débit</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Carte -->
+      <div class="map-placeholder text-white text-center p-5 mb-4">Carte interactive ici</div>
+
+      <!-- Graphique -->
+      <div class="bg-light p-3 mb-4 rounded shadow-sm">
+        <h5>Graphique (exemple)</h5>
+        <canvas id="graphique" height="100"></canvas>
+      </div>
+
+      <!-- Tableau -->
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Localité</th>
+              <th>Valeur</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Douala</td><td>12.5 mm</td><td>2025-05-20</td></tr>
+            <tr><td>Yaoundé</td><td>8.2 mm</td><td>2025-05-20</td></tr>
+            <tr><td>Garoua</td><td>0.0 mm</td><td>2025-05-20</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
